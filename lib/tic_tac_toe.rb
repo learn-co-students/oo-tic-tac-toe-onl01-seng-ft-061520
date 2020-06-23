@@ -1,6 +1,6 @@
   class TicTacToe 
-    def initialize(board = nil)
-      @board = board || Array.new(9, " ")
+    def initialize
+      @board = Array.new(9, " ")
     end 
   end 
 
@@ -25,6 +25,4 @@ class TicTacToe
     end
   end
 
-  def input_to_index(input)
-    input.to_i 1
-  end 
+
