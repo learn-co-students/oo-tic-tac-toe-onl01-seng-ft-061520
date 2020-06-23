@@ -2,10 +2,7 @@
     def initialize
       @board = Array.new(9, " ")
     end 
-  end 
 
-class TicTacToe
-  
   WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
@@ -28,3 +25,4 @@ class TicTacToe
   def input_to_index(user)
     user.to_i - 1
   end
+end
