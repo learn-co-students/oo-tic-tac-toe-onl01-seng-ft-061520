@@ -1,9 +1,9 @@
 class TicTacToe
-  
-  def initialize
-    @board = Array.new(9, " ")
-end 
 
+def initialize(board = nil)
+	  @board = board || Array.new(9, " ")
+  end
+  
 WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
@@ -28,21 +28,27 @@ WIN_COMBINATIONS = [
     user_input.to_i - 1
 end
   
-  def move(position, player)
-    @board[position] = player
+  def move(location, player)
+    @board[location] = player
   end
 
 
   def position_taken?(index_i)
     ((@board[index_i] == "X") || (@board[index_i] == "O"))
   end
-
+  
   def valid_move?(index)
     index.between?(0,8) && !position_taken?(index)
   end
 end
 
+  def current_player
+	  turn_count % 2 == 0 ? "X" : "O"
+  end
+
   def turn_count(board)
-     count = 0
-    
-    
+    @board.count{|player| player == "X" || token == "O"}
+	end
+
+
+ 	
