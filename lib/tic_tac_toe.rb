@@ -42,13 +42,13 @@ end
   end
 end
 
-  def current_player
-	  turn_count % 2 == 0 ? "X" : "O"
-  end
-
   def turn_count(board)
     @board.count{|player| player == "X" || token == "O"}
-	end
+	end 
 
-
- 	
+	
+  def current_player(board)
+    turn_count(board).odd? == true ? "O" : "X"
+  end
+  
+  
