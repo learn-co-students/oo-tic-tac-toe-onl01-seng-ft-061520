@@ -27,9 +27,23 @@
 
   def input_to_index(user_input)
     user_input.to_i - 1
+        
     end
-  end 
   
-  def move(board, index, symbol)
-    board[index] = symbol
-   end 
+ def move(location, player)
+    @board[location] = player
+    
+  end
+
+  def position_taken?(location)
+    ((@board[location] == "X") || (@board[location] == "O"))
+  
+  end
+
+  def valid_move?(index)
+    index.between?(0,4) && !position_taken?(index)
+    end
+end
+
+  def turn_count
+    
