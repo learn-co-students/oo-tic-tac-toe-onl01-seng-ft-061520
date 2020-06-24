@@ -58,18 +58,10 @@ WIN_COMBINATIONS = [
        display_board    # shows on board the move made 
     else
       turn # asks for user to make a valid move 
-  end 
-end
+    end 
+  end
 end 
 
   def won? 
-    WIN_COMBINATIONS.each {|winner|} # check combo arrays 
-    if winner.all?{|y| board|y| == "X"} # check if X won with combos 
-      return winner   # then X is winner 
-    elsif winner.all?{|y| board|y| == "O"} # check if Y won with combos 
-      return winner   # then Y is winner 
-    end
-  end
-#       return false # if no winner and game is a draw 
-# end 
+    
   
