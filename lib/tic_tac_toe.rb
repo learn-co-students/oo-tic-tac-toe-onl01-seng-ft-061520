@@ -28,7 +28,7 @@ WIN_COMBINATIONS = [
     user_input.to_i - 1
   end
   
-  def move(location, player)
+  def move(location, player = "X")
     @board[location] = player
   end
 
@@ -40,13 +40,11 @@ WIN_COMBINATIONS = [
     index.between?(0,8) && !position_taken?(index)
   end
 
-end
-
   def turn_count(board)
     @board.count{|player| player == "X" || token == "O"}
 	end 
-
 	
   def current_player(board)
     turn_count(board) % 2 == 0 ? "X" : "O"
   end
+end
