@@ -40,11 +40,24 @@ WIN_COMBINATIONS = [
     index.between?(0,8) && !position_taken?(index)
   end
 
-  def turn_count(board)
-    @board.count{|player| player == "X" || token == "O"}
+  def turn_count
+    @board.count{|player| player == "X" || player == "O"}
 	end 
 	
-  def current_player(board)
-    turn_count(board) % 2 == 0 ? "X" : "O"
+  def current_player
+    turn_count % 2 == 0 ? "X" : "O"
   end
+
+
+  def turn
+    puts "Please enter a number between 1-9."
+    input = gets.strip # getting string from user 
+    index = input_to_index(input) # converting user input 
+    if valid_move?(index) # checking if user input is valid
+      # user makes placement on the board 
+      move(index, current_player)  
+    else
+      
+  end 
 end
+end 
