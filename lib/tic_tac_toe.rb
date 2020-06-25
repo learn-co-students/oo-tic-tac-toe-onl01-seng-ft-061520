@@ -85,6 +85,7 @@ WIN_COMBINATIONS = [
 
   def full?
     !@board.any?{|win| win == " "}
+<<<<<<< HEAD
   end
 
   def draw?
@@ -127,3 +128,48 @@ WIN_COMBINATIONS = [
   end 
 end
 
+=======
+  end
+
+  def draw?
+    !won? && full?
+  end
+
+
+  def over?
+    won? || draw?
+    end 
+  
+  def winner
+      
+      WIN_COMBINATIONS.each do |winner|
+    index_0 = winner[0]
+    index_1 = winner[1]
+    index_2 = winner[2]
+
+    position_1 = @board[index_0]
+    position_2 = @board[index_1]
+    position_3 = @board[index_2]
+
+    if position_1 == "X" && position_2 == "X" && position_3 == "X"
+      return "X"
+    elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
+      return "O"
+      end
+    end
+    return nil 
+  end 
+
+  def play 
+    until over? 
+    turn
+  end
+    if winner?
+    puts "Congratulations #{winner}!"
+  end 
+    elsif draw?
+    puts "Cat's Game!"
+  end
+end 
+end 
+>>>>>>> 64a29ec08d28ed514961b776baa4fd6ec37ecb41
