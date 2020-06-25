@@ -52,12 +52,12 @@ WIN_COMBINATIONS = [
   def turn
     puts "Please enter a number between 1-9."
     input = gets.strip # getting string from user 
-    index = input_to_index(input)   # converting user input 
-    if valid_move?(index)   # checking if user input is valid
-       move(index, current_player)   # user makes placement on the board
-       display_board    # shows on board the move made 
+    index = input_to_index(input)    
+    if valid_move?(index) 
+       move(index, current_player) 
+       display_board
     else
-      turn # asks for user to make a valid move 
+      turn
     end 
   end
 
@@ -80,7 +80,7 @@ WIN_COMBINATIONS = [
       end
     end
   return false 
-  end 
+end 
  
 
   def full?
@@ -160,6 +160,7 @@ WIN_COMBINATIONS = [
   def play 
     until over? 
     turn
+    end
     if winner
     puts "Congratulations #{winner}!"
     elsif draw?
@@ -167,4 +168,3 @@ WIN_COMBINATIONS = [
       end 
     end 
   end 
-end 
