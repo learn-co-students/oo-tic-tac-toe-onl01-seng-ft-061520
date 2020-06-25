@@ -60,24 +60,26 @@ WIN_COMBINATIONS = [
       turn # asks for user to make a valid move 
     end 
   end
+
+
+
+  def won?
+    WIN_COMBINATIONS.each do |winner|
+    index_0 = winner[0]
+    index_1 = winner[1]
+    index_2 = winner[2]
+
+    position_1 = @board[index_0]
+    position_2 = @board[index_1]
+    position_3 = @board[index_2]
+
+    if position_1 == "X" && position_2 == "X" && position_3 == "X"
+      return winner
+    elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
+      return winner
+    elsif position_1 == "O" && position_2 == "X" && position_3 == "O"
+      return false
+      end
+    end
+  end
 end 
-
-  # def won?
-  #   WIN_COMBINATIONS.each {|wins|}
-  #   index_0 = wins[0]
-  #   index_1 = wins[1]
-  #   index_2 = wins[2]
-
-  #   position_1 = @board[index_0]
-  #   position_2 = @board[index_1]
-  #   position_3 = @board[index_2]
-
-  #   if position_1 == "X" && position_2 == "X" && position_3 == "X"
-  #     return wins
-  #   else position_1 == "O" && position_2 == "O" && position_3 == "O"
-  #     return wins
-  #   elsif position_1 == "O" && position_2 == "X" && position_3 == "O"
-  #     puts "Draw"
-  #     return false
-  #   end
-  # end
