@@ -85,7 +85,7 @@ WIN_COMBINATIONS = [
 
   def full?
     !@board.any?{|win| win == " "}
-<<<<<<< HEAD
+
   end
 
   def draw?
@@ -126,10 +126,7 @@ WIN_COMBINATIONS = [
     puts "Cat's Game!"
     end
   end 
-end
 
-=======
-  end
 
   def draw?
     !won? && full?
@@ -163,13 +160,11 @@ end
   def play 
     until over? 
     turn
-  end
-    if winner?
+    if winner
     puts "Congratulations #{winner}!"
-  end 
     elsif draw?
     puts "Cat's Game!"
-  end
+      end 
+    end 
+  end 
 end 
-end 
->>>>>>> 64a29ec08d28ed514961b776baa4fd6ec37ecb41
