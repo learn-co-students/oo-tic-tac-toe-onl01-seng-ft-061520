@@ -186,7 +186,7 @@ else if the game was a draw
 end
 ```
 
-Run the tests for the `#play` method by typing `rspec spec/02_play_spec.rb` in your terminal.
+Run the tests for the `#play` method by typing ``rspec spec/02_play_spec.rb`` in your terminal.
 
 ### The CLI: `bin/tictactoe`
 
