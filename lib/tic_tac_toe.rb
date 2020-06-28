@@ -1,5 +1,5 @@
 class TicTacToe
-  def initialize
+  def initialize(board = nil)
     @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   end
   
@@ -103,7 +103,6 @@ class TicTacToe
     turn until over?
     puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
   end
-
 end
 
 game = TicTacToe.new
