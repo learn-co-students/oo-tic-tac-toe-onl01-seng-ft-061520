@@ -67,5 +67,43 @@ class TicTacToe
         else
           "O"
         end
+      end
+      
+      def won?
+      a = WIN_COMBINATIONS.find{
+      |combo|
+      @board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X"
+    }
+      b = WIN_COMBINATIONS.find{
+      |combo|
+      @board[combo[0]] == "O" && @board[combo[1]] == "O" && @board[combo[2]] == "O"
+    }
+      return a || b
+      end
+      
+      def full?
+        @board.all?{|i| i != " "}
     end
+    
+    def draw?
+      true if full? && !won?
+    end
+    
+    def over?
+      won? || draw?  
+    end 
+    
+    def winner
+    if won?
+      @board[won?[0]] == "X" ? "X" : "O"
+    end
+  end
+  
+  def play
+    turn until over?
+    puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
+  end
+
 end
+
+game = TicTacToe.new
